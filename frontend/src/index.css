@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  display: block;
+  min-height: 100vh;
+  text-align: center;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+/* 🔍 Barre de recherche */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.styled-search-bar {
+  width: 80%;
+  max-width: 1000px;
+  padding: 20px 25px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  outline: none;
+}
+
+.styled-search-bar:focus {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.styled-search-bar::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
+/* 🎶 Liste des chansons */
+.artist-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid #007BFF;
+  padding: 10px;
+  margin: 15px 0;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.artist-item {
+  font-size: 1.3em;
+  color: #007BFF;
+  font-weight: bold;
+}
+.song-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fafafa;
+  color: #213547;
+  text-align: left;
+}
+
+.song-image-right {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.song-info {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.song-link {
+  text-decoration: none;
+  color: #213547;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+.song-link:hover {
+  color: #007BFF;
+}
+
+/* 🎯 Page d'accueil améliorée */
+.home-title {
+  margin-top: 50px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+.home-subtitle {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.home-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.home-button:hover {
+  background: #45a049;
+}
+
+.result-list {
+  position: relative;
+  z-index: 2;
+}
+
+/* 🎶 Stylisation améliorée de la page SongDetails */
+.song-container {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.song-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.song-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.song-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #213547;
+  margin: 0;
+}
+
+.release-date {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.difficulty-selection {
+  margin: 20px 0;
+}
+
+.difficulty-dropdown {
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #213547;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #213547;
+}
+
+.difficulty-description {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.play-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 15px;
+  background: #213547;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+  background: #218838;
+}
+
+.lyrics-container {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lyrics-line {
+  margin-bottom: 10px;
+}
+
+.word-input {
+  border: 2px solid #213547;
+  padding: 5px;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 5px;
+  width: 80px;
+}
+
+.finish-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 15px;
+  background: #213547;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.finish-button:hover {
+  background: #c82333;
+}
+
+.word-input.correct {
+  border: 2px solid green;
+  color: green;
+  background-color: #e6ffe6;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+  min-width: 60px;
+  max-width: fit-content;
+}
+
+.word-input.incorrect {
+  border: 2px solid red;
+  color: red;
+  background-color: #ffe6e6;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+  min-width: 60px;
+  max-width: fit-content;
+}
+
+* 🎯 Page de Résultat */
+.result-container {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Affichage du score */
+.result-score {
+  font-size: 2rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+/* Paroles corrigées */
+.lyrics-container {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Ligne de paroles */
+.lyrics-line {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* Mots corrects */
+.word-input.correct {
+  border: 2px solid green;
+  color: green;
+  background-color: #e6ffe6;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Mots incorrects */
+.incorrect-word {
+  color: red;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.incorrect-word .incorrect-answer {
+  text-decoration: line-through;
+  margin-right: 5px;
+  color: red;
+}
+
+.incorrect-word .correct-hint {
+  color: green;
+  margin-left: 5px;
+  font-style: italic;
+}
+
+.finish-button:hover {
+  background: #218838;
+}
+
+/* Page artiste */
+
+.artist-page {
+  padding: 40px;
+  text-align: center;
+  color: #213547;
+  background-color: #f5f7fa;
+}
+
+.artist-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.artist-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.artist-name {
+  margin-top: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.artist-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.artist-bio {
+  width: 30%;
+  text-align: left;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.artist-songs {
+  width: 60%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Page jeu 1 */
+
+.random-game-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.artist-input {
+  width: 60%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  outline: none;
+}
+
+.artist-input:focus {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.artist-suggestions {
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.artist-suggestions .suggestion-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+  color: #213547;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.artist-suggestions .suggestion-item:hover {
+  background-color: #007BFF;
+  color: #ffffff;
+}
+
+.lyrics-excerpt {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.title-input {
+  width: 60%;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+}
+
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px auto;
+  width: 60%;
+  text-align: left;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  margin: 5px 0;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.final-score {
+  font-size: 2rem;
+  color: #007BFF;
+  margin: 30px 0;
+}
+
+.restart-button {
+  padding: 15px 30px;
+  background-color: #FF5733;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.restart-button:hover {
+  background-color: #e64c2e;
+}
+
+/* 🎯 Jeu Devinez l'Artiste : Mise en page améliorée */
+
+/* Conteneur principal */
+.guess-artist-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Input de saisie de l'artiste */
+.artist-guess-input {
+  width: 60%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  outline: none;
+}
+
+.artist-guess-input:focus {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Liste des suggestions */
+.artist-suggestions {
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.artist-suggestions .suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  color: #007BFF;
+  transition: background-color 0.3s;
+}
+
+.artist-suggestions .suggestion-item:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Affichage des paroles */
+.lyrics-line {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  color: #333;
+  text-align: center;
+}
+
+/* Boutons de validation et de passage */
+.guess-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.skip-button {
+  margin-top: 20px;
+  margin-left: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #dc3545;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Récapitulatif */
+.final-score {
+  font-size: 2rem;
+  color: #007BFF;
+  margin: 30px 0;
+}
+
+.correct-answers {
+  text-align: left;
+  margin: 20px auto;
+  width: 60%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.correct-answer-item {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+/* Bouton rejouer */
+.restart-button {
+  padding: 15px 30px;
+  background-color: #FF5733;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.restart-button:hover {
+  background-color: #e64c2e;
+}
+
+/* Message d'introduction */
+.intro-message {
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+  color: #555;
+}
+
+/* Page jeu par décennie/langue */
+.decade-language-game-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.decade-language-select {
+  margin: 20px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.language-select {
+  margin: 20px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.start-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #0056b3;
+}
+
+.lyrics-excerpt {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.title-input {
+  width: 60%;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+}
+
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px auto;
+  width: 60%;
+  text-align: left;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  margin: 5px 0;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.pass-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #FF5733;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.final-score {
+  font-size: 2rem;
+  color: #007BFF;
+  margin: 30px 0;
+}
+
+.restart-button {
+  padding: 15px 30px;
+  background-color: #FF5733;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.restart-button:hover {
+  background-color: #e64c2e;
+}
