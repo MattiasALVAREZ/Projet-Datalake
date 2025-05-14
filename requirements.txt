@@ -1,0 +1,15 @@
+fastapi[all]
+uvicorn
+boto3
+beautifulsoup4
+requests
+python-dotenv
+pymysql
+pymongo
+cryptography
+unidecode
+nltk
+numpy
+tenacity
+lxml
+python-dateutil

@@ -1,0 +1,12 @@
+# Ignorer les fichiers et dossiers Python compilés
+__pycache__/
+*.pyc
+
+# Ignorer les fichiers spécifiques à macOS
+.DS_Store
+
+# Ignorer le fichier d'environnement
+.env
+
+# Ignorer le répertoire des logs
+logs/
