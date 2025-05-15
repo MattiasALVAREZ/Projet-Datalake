@@ -112,12 +112,12 @@ L'ingestion et la transformation des données sont orchestrées à l'aide de **D
 
 1. **Cloner le dépôt dans un dossier vierge:**
 ```bash
-git clone https://github.com/baltasarbn6/Projet_DLK.git
+git clone https://github.com/MattiasALVAREZ/Projet-Datalake
 ```
 
 2. **Aller à la racine du projet :**
 ```bash
-cd Projet_DLK
+cd Projet_Datalake
 ```
 
 3. **Traiter les variables d'environnement :**
