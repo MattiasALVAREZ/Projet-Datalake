@@ -67,20 +67,12 @@ Le projet utilise trois principales couches de stockage :
 Une version optimisée du pipeline a été développée pour améliorer les performances d'ingestion et de transformation des données en réduisant le temps de traitement d'au moins 30 %. Cette optimisation repose sur plusieurs techniques :
 
 1. **Optimisation de l'ingestion des données brutes**  
-   - Utilisation de **ThreadPoolExecutor** pour effectuer plusieurs requêtes à l'API Genius en parallèle.  
-   - Scraping des paroles et récupération des traductions en **multithreading**.  
-   - Réutilisation des **sessions HTTP** pour éviter les reconnections inutiles.  
-   - Téléversement sur **S3** en parallèle pour plusieurs artistes et chansons.  
-
+   - Utilisation de **ThreadPoolExecutor** pour effectuer plusieurs requêtes à l'API Genius en parallèle.
+     
 2. **Accélération de la transformation MySQL**  
-   - Extraction depuis **S3** et insertion dans **MySQL** avec **connexion par thread** pour éviter les blocages.  
-   - Traitement **par lot** des insertions et mises à jour pour réduire le nombre d'opérations SQL.  
-   - Suppression des **requêtes redondantes** et amélioration du formatage des dates et du nettoyage des paroles.  
-
-3. **Migration rapide vers MongoDB**  
-   - Chargement des artistes et chansons en **multithreading**.  
-   - Utilisation de **ReplaceOne avec bulk_write** pour insérer ou mettre à jour plusieurs documents en une seule requête.  
-   - Génération des niveaux de difficulté des paroles en **vectorisation** avec NumPy.  
+   - Traitement **par lot** des insertions et mises à jour pour réduire le nombre d'opérations SQL.
+     
+3. **Migration rapide vers MongoDB**    
    - Optimisation de la récupération des relations artistes-chansons en **requêtes groupées** depuis MySQL.  
 
 Cette version permet une ingestion et une transformation plus rapides tout en conservant la structure et l'intégrité des données.
